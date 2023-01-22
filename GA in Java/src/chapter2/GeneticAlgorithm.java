@@ -12,4 +12,18 @@ public class GeneticAlgorithm {
         this.crossoverRate = crossoverRate;
         this.elitismCount = elitismCount;
     }
+
+    public Population initPopulation(int chromosomeLength) {
+        Population population = new Population(chromosomeLength);
+        return population;
+    }
+
+    public double calcFitness(Individual individual) {
+        int correctGenes = 0;
+        for(int i = 0; i < individual.getChromosome().length; i++) {
+            correctGenes += individual.getChromosome()[i];
+        }
+        individual.setFitness(correctGenes/individual.getChromosome().length);
+        return individual.getFitness();
+    }
 }

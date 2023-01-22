@@ -55,11 +55,15 @@ public class Population {
 
     public void shuffle() {
         Random rnd = new Random();
-        // loop throug array
+        // loop through array
         for (int i = population.length - 1; i > 0; i--) {
+            // get random int in range 0 to i+1
             int index = rnd.nextInt(i + 1);
+            // temp copy
             Individual a = population[index];
+            // assign the i element to the random element
             population[index] = population[i];
+            // assign temp copy to the i element
             population[i] = a;
         }
     }
