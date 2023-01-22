@@ -8,6 +8,6 @@ class GeneticAlgorithmTest {
 
     @Test
     void calcFitness() {
-
+        Individual individual = new Individual(50);
     }
 }
