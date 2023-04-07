@@ -29,4 +29,12 @@ public class GeneticAlgorithm {
         individual.setFitness(fitness);
         return  fitness;
     }
+
+    public void evalPopulation(Population population){
+        double populationFitness = 0;
+        for(Individual individual : population.getIndividuals()){
+            populationFitness += calcFitness(individual);
+        }
+        population.setPopulationFitness(populationFitness);
+    }
 }
