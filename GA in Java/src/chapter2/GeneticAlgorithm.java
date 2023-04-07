@@ -37,4 +37,13 @@ public class GeneticAlgorithm {
         }
         population.setPopulationFitness(populationFitness);
     }
+
+    public boolean isTerminationConditionMet(Population population){
+        for(Individual individual: population.getIndividuals()){
+            if(individual.getFitness() == 1){
+                return true;
+            }
+        }
+        return false;
+    }
 }
