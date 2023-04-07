@@ -17,4 +17,16 @@ public class GeneticAlgorithm {
         Population population = new Population(this.populationSize, chromosomeLength);
         return population;
     }
+
+    public double calcFitness(Individual individual){
+        int correctGenes = 0;
+        for(int geneIndex = 0; geneIndex < individual.getChromosomeLength(); geneIndex++){
+            if(individual.getGene(geneIndex) == 1){
+                correctGenes += 1;
+            }
+        }
+        double fitness = (double) correctGenes / individual.getChromosomeLength();
+        individual.setFitness(fitness);
+        return  fitness;
+    }
 }
