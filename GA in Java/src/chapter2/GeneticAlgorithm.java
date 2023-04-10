@@ -1,5 +1,7 @@
 package chapter2;
 
+import java.util.Random;
+
 public class GeneticAlgorithm {
     private int populationSize;
     private double mutationRate;
@@ -45,5 +47,22 @@ public class GeneticAlgorithm {
             }
         }
         return false;
+    }
+
+    public Individual selectParents(Population population){
+        // Get individuals
+        Individual[] individuals = population.getIndividuals();
+        // Spin roulette wheel
+        double populationFitness = population.getPopulationFitness();
+        double rouletteWheelPosition = Math.random() * populationFitness;
+        // Find parent
+        double spinWheel = 0;
+        for(Individual individual: individuals){
+            spinWheel += individual.getFitness();
+            if(spinWheel >= rouletteWheelPosition){
+                return individual;
+            }
+        }
+        return individuals[population.size() - 1];
     }
 }
