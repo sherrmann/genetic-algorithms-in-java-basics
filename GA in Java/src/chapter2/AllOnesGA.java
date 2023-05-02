@@ -11,7 +11,7 @@ public class AllOnesGA {
         while(!ga.isTerminationConditionMet(population)){
             System.out.println("Best solution: " + population.getFittest(0).toString());
             // TODO crossover
-            ga.crossover(population);
+            //ga.crossover(population);
             // TODO mutate
             ga.evalPopulation(population);
             generation++;
