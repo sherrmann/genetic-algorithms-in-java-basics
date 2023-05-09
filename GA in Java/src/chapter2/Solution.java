@@ -1,4 +1,8 @@
 // Definition for singly-linked list.
+
+import java.util.LinkedList;
+import java.util.List;
+
 class ListNode {
     int val;
     ListNode next;
@@ -35,8 +39,12 @@ class Solution {
 
         String sum = String.valueOf(Integer.parseInt(str1) + Integer.parseInt(str2));
         
-        for(char ch: sum.toCharArray()){
-            
+        List<ListNode> resultList = new LinkedList<ListNode>();
+
+        // you can link ListNodes and set val after the object has been created
+        for (int i = 1; i < sum.length(); i++) {
+            resultList.add(
+                new ListNode(Integer.parseInt(String.valueOf(sum.charAt(i))), currentListNode2));
         }
 
         return null;
