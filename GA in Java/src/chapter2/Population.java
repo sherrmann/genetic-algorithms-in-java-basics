@@ -15,7 +15,7 @@ public class Population {
     public Population(int populationSize, int chromosomeLength) {
         this.population = new Individual[populationSize];
 
-        for (int individualCount = 0; individualCount <= populationSize; individualCount++) {
+        for (int individualCount = 0; individualCount < populationSize; individualCount++) {
             this.population[individualCount] = new Individual(chromosomeLength);
         }
     }

@@ -49,4 +49,8 @@ public class Individual {
         }
         return output.toString();
     }
+
+    public int getChromosomeLength() {
+        return this.chromosome.length;
+    }
 }
